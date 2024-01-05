@@ -1,9 +1,18 @@
 server:
   port: 8081
 spring:
+  application:
+    name: backend
+  profiles:
+    active: dev
+  cloud:
+    config:
+      uri: http://localhost:8888
   rabbitmq:
-    host: 47.109.151.152
-    port: 5672
-    username: wyn
-    password: guiqi308
-    virtual-host: /
+    host: ${RABBITMQ_HOST}
+    port: ${RABBITMQ_PORT}
+    username: ${RABBITMQ_USER}
+    password: ${RABBITMQ_PASSWORD}
+    virtual-host: ${RABBITMQ_VHOST}
+  config:
+    import: "configserver:"
