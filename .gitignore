@@ -148,9 +148,4 @@ Temporary Items
 *.icloud
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,intellij
-/backend/.idea/.gitignore
-/backend/.idea/compiler.xml
-/backend/.idea/encodings.xml
-/backend/.idea/jarRepositories.xml
-/backend/.idea/misc.xml
-/backend/.idea/uiDesigner.xml
+/backend/.idea/
