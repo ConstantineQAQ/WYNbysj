@@ -1,0 +1,9 @@
+server:
+  port: 8081
+spring:
+  rabbitmq:
+    host: 47.109.151.152
+    port: 5672
+    username: wyn
+    password: guiqi308
+    virtual-host: /
