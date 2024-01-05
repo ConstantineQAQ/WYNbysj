@@ -149,3 +149,10 @@ Temporary Items
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,intellij
 /backend/.idea/
+/backend/assembly/target
+/backend/base/target
+/backend/dal/target
+/backend/service/target
+/backend/web/target
+/configserver/.idea/
+configserver/src/main/resources/config-server-secrets.yml
