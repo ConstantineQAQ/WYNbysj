@@ -156,3 +156,16 @@ Temporary Items
 /backend/web/target
 /configserver/.idea/
 configserver/src/main/resources/config-server-secrets.yml
+/.idea/.gitignore
+/configserver/.gitignore
+/backend/backend.iml
+/.idea/compiler.xml
+/configserver/src/main/resources/config-server-secrets.properties
+/configserver/src/test/java/com/constantineqaq/configserver/ConfigserverApplicationTests.java
+/.idea/encodings.xml
+/.idea/GitCommitMessageStorage.xml
+/.idea/jarRepositories.xml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/vcs.xml
+/.idea/WYNbysj.iml
