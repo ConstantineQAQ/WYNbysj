@@ -1,4 +1,4 @@
-FROM maven:3-openjdk-17-slim
+FROM maven:3-openjdk-17
 
 LABEL maintainer="wangyaning<357208746@qq.com>"
 
