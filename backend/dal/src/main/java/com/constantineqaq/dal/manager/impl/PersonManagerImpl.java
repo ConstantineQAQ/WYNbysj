@@ -4,10 +4,12 @@ import com.constantineqaq.base.pojo.Person;
 import com.constantineqaq.dal.dao.PersonDao;
 import com.constantineqaq.dal.manager.PersonManager;
 import jakarta.annotation.Resource;
+import org.springframework.stereotype.Component;
 
 
 import java.util.List;
 
+@Component
 public class PersonManagerImpl implements PersonManager {
 
     @Resource

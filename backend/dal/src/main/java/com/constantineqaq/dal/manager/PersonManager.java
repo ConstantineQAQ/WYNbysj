@@ -8,7 +8,6 @@ import java.util.List;
 
 
 @Transactional
-@Service
 public interface PersonManager {
 
     public List<Person> getAllPerson();
