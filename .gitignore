@@ -155,7 +155,7 @@ Temporary Items
 /backend/service/target
 /backend/web/target
 /configserver/.idea/
-configserver/src/main/resources/config-server-secrets.yml
+/configserver/target
 /.idea/.gitignore
 /configserver/.gitignore
 /backend/backend.iml
