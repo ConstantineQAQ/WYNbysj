@@ -1,5 +1,6 @@
 package com.constantineqaq.base.config;
 
+import com.constantineqaq.base.constant.RabbitMqConstant;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.*;
@@ -9,13 +10,10 @@ import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+
 @Configuration
 @Slf4j
 public class RabbitMqConfiguration {
-    public static final String EXCHANGE_NAME = "mysql.exchange";
-    public static final String QUEUE_NAME = "mysql.queue";
-    public static final String ROUTING_KEY = "canal.routing.key";
-
     @Resource
     private CachingConnectionFactory connectionFactory;
 
@@ -45,12 +43,12 @@ public class RabbitMqConfiguration {
 
     @Bean
     public FanoutExchange fanoutExchange() {
-        return new FanoutExchange(EXCHANGE_NAME, true, false);
+        return new FanoutExchange(RabbitMqConstant.EXCHANGE_NAME, true, false);
     }
 
     @Bean
     public Queue fanoutQueue() {
-        return new Queue(QUEUE_NAME, true,false,false);
+        return new Queue(RabbitMqConstant.QUEUE_NAME, true,false,false);
     }
 
     @Bean

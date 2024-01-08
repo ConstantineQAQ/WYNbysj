@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+option java_multiple_files = true;
+option java_package = "com.constantineqaq.grpc.person";
+
+message PersonG {
+  int32 id = 1;
+  string name = 2;
+  int32 age = 3;
+  string gender = 4;
+}
+
+message PersonRequest {
+  int32 id = 1;
+}
+
+message CommonResponse {
+  string message = 1;
+  int32 code = 2;
+}
+
+message PersonResponse {
+  CommonResponse commonResponse = 1;
+  repeated PersonG person = 2;
+}
+
+service PersonService {
+  rpc GetAllPerson(google.protobuf.Empty) returns (PersonResponse) {}
+  rpc GetPersonById(PersonRequest) returns (PersonResponse) {}
+  rpc AddPerson(PersonG) returns (CommonResponse) {}
+  rpc UpdatePerson(PersonG) returns (CommonResponse) {}
+  rpc DeletePersonById(PersonRequest) returns (CommonResponse) {}
+  rpc GetPersonListByIds(stream PersonRequest) returns (PersonResponse) {}
+}
