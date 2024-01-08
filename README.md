@@ -6,7 +6,7 @@
 - **开发框架** SpringBoot 3.2.1
 - **数据库** MySQL 8.0.35 + MyBatisPlus 3.5.3
 - **缓存** Redis
-- **缓存同步数据库** Alibaba Canal
+- **监听binlog** Alibaba Canal
 - **RPC框架** gRPC
 - **消息队列** RabbitMQ
 - **Api文档** Swagger2
