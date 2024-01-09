@@ -154,6 +154,7 @@ Temporary Items
 /backend/dal/target
 /backend/service/target
 /backend/web/target
+/backend/base/src/main/java/com/constantineqaq/grpc
 /configserver/.idea/
 /configserver/target
 /.idea/.gitignore

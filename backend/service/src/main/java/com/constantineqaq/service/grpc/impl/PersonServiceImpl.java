@@ -1,6 +1,6 @@
 package com.constantineqaq.service.grpc.impl;
 
-import com.constantineqaq.base.pojo.Person;
+import com.constantineqaq.base.dto.Person;
 import com.constantineqaq.dal.manager.PersonManager;
 import com.constantineqaq.grpc.person.*;
 import com.google.protobuf.Empty;
@@ -8,6 +8,7 @@ import io.grpc.stub.StreamObserver;
 import jakarta.annotation.Resource;
 import net.devh.boot.grpc.server.service.GrpcService;
 
+import java.util.List;
 
 
 @GrpcService
@@ -18,7 +19,23 @@ public class PersonServiceImpl extends PersonServiceGrpc.PersonServiceImplBase {
 
     @Override
     public void getAllPerson(Empty request, StreamObserver<PersonResponse> responseObserver) {
-        personManager.getAllPerson();
+        List<Person> personList = personManager.getAllPerson();
+        PersonResponse.Builder builder = PersonResponse.newBuilder();
+
+        for (Person person : personList) {
+            builder.addPerson(PersonG.newBuilder()
+                    .setId(person.getId())
+                    .setName(person.getName())
+                    .setAge(person.getAge())
+                    .setGender(person.getGender())
+                    .build());
+        }
+        builder.setCommonResponse(CommonResponse.newBuilder()
+                .setCode(200)
+                .setMessage("success")
+                .build());
+        responseObserver.onNext(builder.build());
+        responseObserver.onCompleted();
     }
 
     @Override
@@ -28,12 +45,12 @@ public class PersonServiceImpl extends PersonServiceGrpc.PersonServiceImplBase {
 
     @Override
     public void addPerson(PersonG request, StreamObserver<CommonResponse> responseObserver) {
-        personManager.addPerson(Person.convertToLocalPerson(request));
+        personManager.addPerson(com.constantineqaq.base.dto.Person.convertToLocalPerson(request));
     }
 
     @Override
     public void updatePerson(PersonG request, StreamObserver<CommonResponse> responseObserver) {
-        personManager.updatePerson(Person.convertToLocalPerson(request));
+        personManager.updatePerson(com.constantineqaq.base.dto.Person.convertToLocalPerson(request));
     }
 
     @Override

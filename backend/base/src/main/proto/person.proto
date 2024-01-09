@@ -9,7 +9,7 @@ message PersonG {
   int32 id = 1;
   string name = 2;
   int32 age = 3;
-  string gender = 4;
+  int32 gender = 4;
 }
 
 message PersonRequest {

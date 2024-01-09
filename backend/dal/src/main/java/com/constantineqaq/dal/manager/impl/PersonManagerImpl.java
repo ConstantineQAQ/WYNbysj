@@ -1,6 +1,6 @@
 package com.constantineqaq.dal.manager.impl;
 
-import com.constantineqaq.base.pojo.Person;
+import com.constantineqaq.base.dto.Person;
 import com.constantineqaq.dal.dao.PersonDao;
 import com.constantineqaq.dal.manager.PersonManager;
 import jakarta.annotation.Resource;
@@ -14,6 +14,7 @@ public class PersonManagerImpl implements PersonManager {
 
     @Resource
     private PersonDao personDao;
+
 
     @Override
     public List<Person> getAllPerson() {

@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: 8080
 spring:
   application:
     name: backend
@@ -7,7 +7,8 @@ spring:
     active: dev
   cloud:
     config:
-      uri: http://47.109.151.152:8888
+       uri: http://47.109.151.152:8888
+#        uri: http://localhost:8888
   rabbitmq:
     host: ${RABBITMQ_HOST}
     port: ${RABBITMQ_PORT}
@@ -22,5 +23,8 @@ spring:
     password: ${MYSQL_PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver
 mybatis-plus:
-    mapper-locations: classpath:mapper/*.xml
+    mapper-locations: classpath*:/mapper/**/*.xml
     type-aliases-package: com.example.assembly.entity
+grpc:
+  server:
+    port: 9090

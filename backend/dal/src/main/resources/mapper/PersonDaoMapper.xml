@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.constantineqaq.dal.dao.PersonDao">
+    <resultMap id="BaseResultMap" type="com.constantineqaq.base.dto.Person">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="age" jdbcType="INTEGER" property="age"/>
+        <result column="gender" jdbcType="INTEGER" property="gender"/>
+    </resultMap>
+    <insert id="addPerson">
+    </insert>
+    <update id="updatePerson">
+
+    </update>
+    <delete id="deletePersonById">
+
+    </delete>
+    <select id="getAllPerson" resultType="com.constantineqaq.base.dto.Person">
+        select * from student_main
+    </select>
+
+    <select id="getPersonById" resultType="com.constantineqaq.base.dto.Person">
+        select * from person where id = #{id}
+    </select>
+
+
+</mapper>

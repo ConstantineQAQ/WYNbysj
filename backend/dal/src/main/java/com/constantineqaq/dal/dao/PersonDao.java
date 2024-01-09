@@ -1,11 +1,16 @@
 package com.constantineqaq.dal.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.constantineqaq.base.pojo.Person;
+import com.constantineqaq.base.dto.Person;
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Component;
+
 
 import java.util.List;
 
-public interface PersonDao extends BaseMapper<Person> {
+@Mapper
+@Component
+public interface PersonDao {
 
     List<Person> getAllPerson();
 

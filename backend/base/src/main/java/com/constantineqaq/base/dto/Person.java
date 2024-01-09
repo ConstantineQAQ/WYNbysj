@@ -1,18 +1,14 @@
-package com.constantineqaq.base.pojo;
+package com.constantineqaq.base.dto;
 
 
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 @Data
-@TableName("student_main")
 public class Person {
-    @TableId
     private Integer id;
     private String name;
     private Integer age;
-    private String gender;
+    private Integer gender;
 
     // gRPC类转化为POJO类
     public static Person convertToLocalPerson(com.constantineqaq.grpc.person.PersonG personG) {

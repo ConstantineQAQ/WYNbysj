@@ -9,7 +9,9 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan({
         "com.constantineqaq"
 })
-@MapperScan("com.constantineqaq.dal.dao")
+@MapperScan({
+        "com.constantineqaq.dal.dao"
+})
 public class AssemblyApplication {
         public static void main(String[] args) {
                 SpringApplication.run(AssemblyApplication.class, args);

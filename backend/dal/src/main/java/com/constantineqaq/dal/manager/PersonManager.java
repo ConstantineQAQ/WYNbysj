@@ -1,7 +1,7 @@
 package com.constantineqaq.dal.manager;
 
-import com.constantineqaq.base.pojo.Person;
-import org.springframework.stereotype.Service;
+
+import com.constantineqaq.base.dto.Person;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -10,13 +10,13 @@ import java.util.List;
 @Transactional
 public interface PersonManager {
 
-    public List<Person> getAllPerson();
+    List<Person> getAllPerson();
 
-    public Person getPersonById(int id);
+    Person getPersonById(int id);
 
-    public void addPerson(Person person);
+    void addPerson(Person person);
 
-    public void updatePerson(Person person);
+    void updatePerson(Person person);
 
-    public void deletePersonById(int id);
+    void deletePersonById(int id);
 }
