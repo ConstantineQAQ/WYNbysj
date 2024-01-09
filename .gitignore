@@ -170,3 +170,6 @@ Temporary Items
 /.idea/modules.xml
 /.idea/vcs.xml
 /.idea/WYNbysj.iml
+/client_test/src/test/java/com/example/client_test/ClientTestApplicationTests.java
+/.idea/dataSources.xml
+/.idea/sqldialects.xml
