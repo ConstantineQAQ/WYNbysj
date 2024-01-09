@@ -7,7 +7,7 @@ spring:
     active: dev
   cloud:
     config:
-       uri: http://47.109.151.152:8888
+       uri: http://1.94.63.237:8888
 #        uri: http://localhost:8888
   rabbitmq:
     host: ${RABBITMQ_HOST}
