@@ -11,4 +11,4 @@
 - **RPC框架** gRPC
 - **消息队列** RabbitMQ
 - **Api文档** Swagger2
-- **配置中心** Spring Cloud Config + GitHub私有仓库存储
+- **配置中心** Apollo

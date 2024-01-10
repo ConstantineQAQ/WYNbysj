@@ -67,13 +67,6 @@
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
 
-<!--            SpringConfigServer-->
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-starter-config</artifactId>
-                <version>4.0.3</version>
-            </dependency>
-
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-amqp</artifactId>
@@ -165,6 +158,13 @@
                 <artifactId>canal.client</artifactId>
                 <version>1.1.7</version>
             </dependency>
+
+<!--            Apollo-->
+                <dependency>
+                    <groupId>com.ctrip.framework.apollo</groupId>
+                    <artifactId>apollo-client-config-data</artifactId>
+                    <version>2.2.0</version>
+                </dependency>
 
 <!--            swagger-->
             <dependency>

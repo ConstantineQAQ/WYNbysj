@@ -43,9 +43,10 @@
             <artifactId>service</artifactId>
         </dependency>
 
+<!--        Apollo-->
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-config</artifactId>
+            <groupId>com.ctrip.framework.apollo</groupId>
+            <artifactId>apollo-client-config-data</artifactId>
         </dependency>
 
 

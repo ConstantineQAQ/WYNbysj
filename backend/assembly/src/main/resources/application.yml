@@ -3,20 +3,12 @@ server:
 spring:
   application:
     name: backend
-  profiles:
-    active: dev
-  cloud:
-    config:
-       uri: http://1.94.63.237:8888
-#        uri: http://localhost:8888
   rabbitmq:
     host: ${RABBITMQ_HOST}
     port: ${RABBITMQ_PORT}
     username: ${RABBITMQ_USER}
     password: ${RABBITMQ_PASSWORD}
     virtual-host: ${RABBITMQ_VHOST}
-  config:
-    import: "configserver:"
   datasource:
     url: jdbc:mysql://${MYSQL_HOST}:${MYSQL_PORT}/${MYSQL_DATABASE}?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
     username: ${MYSQL_USER}
@@ -28,3 +20,11 @@ mybatis-plus:
 grpc:
   server:
     port: 9090
+apollo:
+  bootstrap:
+    enabled: true
+    eagerLoad:
+      enabled: true
+  config-service: http://1.94.63.237:8080
+app:
+  id: SampleApp
