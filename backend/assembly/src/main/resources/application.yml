@@ -20,11 +20,3 @@ mybatis-plus:
 grpc:
   server:
     port: 9090
-apollo:
-  bootstrap:
-    enabled: true
-    eagerLoad:
-      enabled: true
-  config-service: http://1.94.63.237:8080
-app:
-  id: SampleApp
