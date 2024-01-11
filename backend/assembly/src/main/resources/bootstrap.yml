@@ -7,3 +7,5 @@ apollo:
       enabled: true
   config-service: http://1.94.63.237:8080
   cache-dir: ./apollo-cache
+logging:
+  config: classpath:logback-spring.xml

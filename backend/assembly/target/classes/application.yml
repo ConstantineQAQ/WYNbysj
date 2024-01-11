@@ -1,9 +1,28 @@
 server:
-  port: 8081
+  port: 8080
 spring:
+  application:
+    name: backend
   rabbitmq:
-    host: 47.109.151.152
-    port: 5672
-    username: wyn
-    password: guiqi308
-    virtual-host: /
+    host: ${RABBITMQ_HOST}
+    port: ${RABBITMQ_PORT}
+    username: ${RABBITMQ_USER}
+    password: ${RABBITMQ_PASSWORD}
+    virtual-host: ${RABBITMQ_VHOST}
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST}:${MYSQL_PORT}/${MYSQL_DATABASE}?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    username: ${MYSQL_USER}
+    password: ${MYSQL_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis-plus:
+    mapper-locations: classpath*:/mapper/**/*.xml
+    type-aliases-package: com.example.assembly.entity
+grpc:
+  server:
+    port: 9090
+  client:
+    person-service:
+      address: static://localhost:9090
+      enable-keep-alive: true
+      keep-alive-without-calls: true
+      negotiation-type: plaintext

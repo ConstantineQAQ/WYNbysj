@@ -1,5 +1,4 @@
-package com.example.client_test.grpc;
-
+package com.constantineqaq.web.grpc;
 
 import com.constantineqaq.base.dto.Person;
 import com.constantineqaq.grpc.person.PersonResponse;
