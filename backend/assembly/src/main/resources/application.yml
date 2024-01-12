@@ -1,8 +1,21 @@
+grpc:
+  server:
+    port: 9099
+  client:
+    backend-server:
+      negotiation-type: plaintext
 server:
   port: 8080
 spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        username: nacos
+        password: nacos
+        enabled: true
   application:
-    name: backend
+    name: backend-server
   rabbitmq:
     host: ${RABBITMQ_HOST}
     port: ${RABBITMQ_PORT}
@@ -17,12 +30,3 @@ spring:
 mybatis-plus:
     mapper-locations: classpath*:/mapper/**/*.xml
     type-aliases-package: com.example.assembly.entity
-grpc:
-  server:
-    port: 9090
-  client:
-    person-service:
-      address: static://localhost:9090
-      enable-keep-alive: true
-      keep-alive-without-calls: true
-      negotiation-type: plaintext

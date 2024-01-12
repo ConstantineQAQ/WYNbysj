@@ -3,10 +3,11 @@ package com.constantineqaq.dal.manager.impl;
 import com.constantineqaq.base.dto.Person;
 import com.constantineqaq.dal.dao.PersonDao;
 import com.constantineqaq.dal.manager.PersonManager;
-import jakarta.annotation.Resource;
+
 import org.springframework.stereotype.Component;
 
 
+import javax.annotation.Resource;
 import java.util.List;
 
 @Component

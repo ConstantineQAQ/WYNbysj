@@ -5,9 +5,10 @@ import com.constantineqaq.dal.manager.PersonManager;
 import com.constantineqaq.grpc.person.*;
 import com.google.protobuf.Empty;
 import io.grpc.stub.StreamObserver;
-import jakarta.annotation.Resource;
+
 import net.devh.boot.grpc.server.service.GrpcService;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 

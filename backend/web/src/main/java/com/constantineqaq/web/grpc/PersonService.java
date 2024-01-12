@@ -15,7 +15,7 @@ import java.util.List;
 @Slf4j
 public class PersonService {
 
-    @GrpcClient("person-service")
+    @GrpcClient("backend-server")
     private PersonServiceGrpc.PersonServiceBlockingStub personServiceBlockingStub;
 
     public List<Person> getAllPerson() {
