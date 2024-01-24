@@ -2,6 +2,10 @@ package com.constantineqaq.base.enums;
 
 import lombok.Getter;
 
+/**
+ * @author wangyaning33
+ */
+
 @Getter
 public enum CommonEnum {
     SUCCESS(200, "成功"),

@@ -13,6 +13,9 @@ import org.springframework.context.annotation.Configuration;
 import javax.annotation.Resource;
 
 
+/**
+ * @author wangyaning33
+ */
 @Configuration
 @Slf4j
 public class RabbitMqConfiguration {

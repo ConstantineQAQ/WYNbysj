@@ -1,11 +1,13 @@
 app:
   id: WYNbysj
-apollo:
-  bootstrap:
-    enabled: true
-    eagerLoad:
-      enabled: true
-  config-service: http://1.94.63.237:8080
-  cache-dir: ./apollo-cache
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: 1.94.63.237:8848
+        group: DEFAULT_GROUP
+        file-extension: properties
+        refresh-enabled: true
+        prefix: ${app.id}
 logging:
   config: classpath:logback-spring.xml
