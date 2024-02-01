@@ -1,7 +1,8 @@
 package com.constantineqaq.service.grpc.impl;
 
-import com.constantineqaq.base.dto.Person;
-import com.constantineqaq.dal.manager.PersonManager;
+import com.constantineqaq.base.enums.CommonEnum;
+import com.constantineqaq.dal.mapper.PersonMapper;
+import com.constantineqaq.base.entity.Person;
 import com.constantineqaq.grpc.person.*;
 import com.google.protobuf.Empty;
 import io.grpc.stub.StreamObserver;
@@ -16,11 +17,11 @@ import java.util.List;
 public class PersonServiceImpl extends PersonServiceGrpc.PersonServiceImplBase {
 
     @Resource
-    private PersonManager personManager;
+    private PersonMapper personMapper;
 
     @Override
     public void getAllPerson(Empty request, StreamObserver<PersonResponse> responseObserver) {
-        List<Person> personList = personManager.getAllPerson();
+        List<Person> personList = personMapper.selectList(null);
         PersonResponse.Builder builder = PersonResponse.newBuilder();
 
         for (Person person : personList) {
@@ -41,22 +42,41 @@ public class PersonServiceImpl extends PersonServiceGrpc.PersonServiceImplBase {
 
     @Override
     public void getPersonById(PersonRequest request, StreamObserver<PersonResponse> responseObserver) {
-        personManager.getPersonById(request.getId());
+        Person person = personMapper.selectById(request.getId());
+        PersonResponse.Builder builder = PersonResponse.newBuilder();
+        // 如果没有找到对应的person，返回失败
+        if (person == null) {
+            builder.setCommonResponse(CommonResponse.newBuilder()
+                    .setCode(CommonEnum.FAIL.getCode())
+                    .setMessage(CommonEnum.FAIL.getMessage())
+                    .build());
+            responseObserver.onNext(builder.build());
+            responseObserver.onCompleted();
+            return;
+        }
+        builder.addPerson(PersonG.newBuilder()
+                .setId(person.getId())
+                .setName(person.getName())
+                .setAge(person.getAge())
+                .setGender(person.getGender())
+                .build());
+        builder.setCommonResponse(CommonResponse.newBuilder()
+                .setCode(CommonEnum.SUCCESS.getCode())
+                .setMessage(CommonEnum.SUCCESS.getMessage())
+                .build());
+        responseObserver.onNext(builder.build());
+        responseObserver.onCompleted();
     }
 
     @Override
     public void addPerson(PersonG request, StreamObserver<CommonResponse> responseObserver) {
-        personManager.addPerson(com.constantineqaq.base.dto.Person.convertToLocalPerson(request));
-    }
-
-    @Override
-    public void updatePerson(PersonG request, StreamObserver<CommonResponse> responseObserver) {
-        personManager.updatePerson(com.constantineqaq.base.dto.Person.convertToLocalPerson(request));
-    }
-
-    @Override
-    public void deletePersonById(PersonRequest request, StreamObserver<CommonResponse> responseObserver) {
-        personManager.deletePersonById(request.getId());
+        personMapper.insert(Person.convertToLocalPerson(request));
+        CommonResponse response = CommonResponse.newBuilder()
+                .setCode(CommonEnum.SUCCESS.getCode())
+                .setMessage(CommonEnum.SUCCESS.getMessage())
+                .build();
+        responseObserver.onNext(response);
+        responseObserver.onCompleted();
     }
 
 }

@@ -10,6 +10,7 @@ import lombok.Getter;
 public enum CommonEnum {
     SUCCESS(200, "成功"),
     FAIL(500, "失败"),
+    NOT_FOUND(404, "未找到");
     ;
 
 

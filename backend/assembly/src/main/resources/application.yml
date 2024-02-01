@@ -26,5 +26,5 @@ grpc:
     backend-server:
       negotiation-type: plaintext
 mybatis-plus:
-    mapper-locations: classpath*:/mapper/**/*.xml
-    type-aliases-package: com.example.assembly.entity
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

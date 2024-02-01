@@ -27,6 +27,14 @@
             <groupId>com.constantineqaq</groupId>
             <artifactId>base</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.constantineqaq</groupId>
+            <artifactId>dal</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.constantineqaq</groupId>
+            <artifactId>service</artifactId>
+        </dependency>
     </dependencies>
 
 </project>
