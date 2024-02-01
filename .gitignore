@@ -173,3 +173,11 @@ Temporary Items
 /client_test/src/test/java/com/example/client_test/ClientTestApplicationTests.java
 /.idea/dataSources.xml
 /.idea/sqldialects.xml
+
+# logs文件夹下的所有文件
+logs/*
+
+frontend/.vscode/*
+frontend.iml
+
+/frontend/.vscode/extensions.json
